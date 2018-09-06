@@ -1,0 +1,41 @@
+# [PackageDev] target_format: plist, ext: tmLanguage
+name: PL1
+scopeName: source.pl1
+fileTypes: [pl1, pl, pc, pci, pcx]
+uuid: FB91C301-3214-42B3-8B56-16288F1C1E17
+
+patterns:
+
+- name: storage.type.pl1
+  match: \b(ALIGNED|ANY|AREA|AUTOMATIC|AUTO|BASED|BINARY|BIN|BIT|BUILTIN|CHARACTER|CHAR|CONDITION|COND|CONTROLLED|CTL|DECIMAL|DEC|DEFINED|DEF|DESCRIPTOR|DESC|DIMENSION|DIM|DIRECT|ENTRY|ENVIRONMENT|ENV|EXTERNAL|EXT|FILE|FIXED|FLOAT|GLOBALDEF|GLOBALREF|INITIAL|INIT|INPUT|INTERNAL|INT|KEYED|LABEL|LIKE|LIST|MEMBER|NONVARYING|NONVAR|OFFSET|OPTIONAL|OUTPUT|PARAMETER|PARM|PICTURE|PIC|POINTER|PTR|POSITION|POS|PRECISION|PREC|PRINT|READONLY|RECORD|REFER|REFERENCE|REF|RETURNS|SEQUENTIAL|SEQL|STATIC|STREAM|STRUCTURE|TRUNCATE|TYPE|UNALIGNED|UNAL|UNION|UPDATE|VALUE|VAL|VARIABLE|VARYING|VAR)\b
+
+- name: support.function.cobol meta.function.pl1
+  match: '(\w+)\s*\:'
+  comment: Functions and labels. Both appear in the Symbol list.
+
+- name: invalid.illegal
+  match: \w{32,}
+  comment: Not more than 32 character identifiers allowed in PL1
+
+- name: keyword.operator.pl1
+  match: \b(\!\!|&|==|<=|>=|=|^=|+|-|\^|\/|\|\||\*|\*\*)\b
+
+- name: keyword.control.pl1
+  match: \b(BASED|BYADDR|BYVALUE|DCL|DECL|DECLARE|DO|ELSE|END|END|IF|NONASGN|PROC|PROCEDURE|RECURSIVE|RETURN|RETURNS|THEN|VAR|WHEN|WHILE|SELECT|ANY|ALL|OTHERWISE|OTHER|GOTO|GO TO|CALL)\b
+
+- name: constant.numeric.pl1
+  match: \b((0(x|X)[0-9a-fA-F]*)|(([0-9]+\.?[0-9]*)|(\.[0-9]+))((e|E)(\+|-)?[0-9]+)?)\b
+
+- name: comment.block.pl1
+  contentName: comment.block.pl1
+  begin: \/\*
+  end: \*\/
+
+- name: string.quoted.single.pl1
+  contentName: string.quoted.single.pl1
+  begin: ''''
+  beginCaptures:
+    '0': {name: punctuation.definition.string.begin.pl1}
+  end: ''''
+  endCaptures:
+    '0': {name: punctuation.definition.string.end.pl1}

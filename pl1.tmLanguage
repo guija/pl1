@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>fileTypes</key>
+	<array>
+		<string>pl1</string>
+		<string>pl</string>
+		<string>pc</string>
+		<string>pci</string>
+		<string>pcx</string>
+	</array>
+	<key>name</key>
+	<string>PL1</string>
+	<key>patterns</key>
+	<array>
+		<dict>
+			<key>match</key>
+			<string>\b(ALIGNED|ANY|AREA|AUTOMATIC|AUTO|BASED|BINARY|BIN|BIT|BUILTIN|CHARACTER|CHAR|CONDITION|COND|CONTROLLED|CTL|DECIMAL|DEC|DEFINED|DEF|DESCRIPTOR|DESC|DIMENSION|DIM|DIRECT|ENTRY|ENVIRONMENT|ENV|EXTERNAL|EXT|FILE|FIXED|FLOAT|GLOBALDEF|GLOBALREF|INITIAL|INIT|INPUT|INTERNAL|INT|KEYED|LABEL|LIKE|LIST|MEMBER|NONVARYING|NONVAR|OFFSET|OPTIONAL|OUTPUT|PARAMETER|PARM|PICTURE|PIC|POINTER|PTR|POSITION|POS|PRECISION|PREC|PRINT|READONLY|RECORD|REFER|REFERENCE|REF|RETURNS|SEQUENTIAL|SEQL|STATIC|STREAM|STRUCTURE|TRUNCATE|TYPE|UNALIGNED|UNAL|UNION|UPDATE|VALUE|VAL|VARIABLE|VARYING|VAR)\b</string>
+			<key>name</key>
+			<string>storage.type.pl1</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Functions and labels. Both appear in the Symbol list.</string>
+			<key>match</key>
+			<string>(\w+)\s*\:</string>
+			<key>name</key>
+			<string>support.function.cobol meta.function.pl1</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Not more than 32 character identifiers allowed in PL1</string>
+			<key>match</key>
+			<string>\w{32,}</string>
+			<key>name</key>
+			<string>invalid.illegal</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\b(\!\!|&amp;|==|&lt;=|&gt;=|=|^=|+|-|\^|\/|\|\||\*|\*\*)\b</string>
+			<key>name</key>
+			<string>keyword.operator.pl1</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\b(BASED|BYADDR|BYVALUE|DCL|DECL|DECLARE|DO|ELSE|END|END|IF|NONASGN|PROC|PROCEDURE|RECURSIVE|RETURN|RETURNS|THEN|VAR|WHEN|WHILE|SELECT|ANY|ALL|OTHERWISE|OTHER|GOTO|GO TO|CALL)\b</string>
+			<key>name</key>
+			<string>keyword.control.pl1</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\b((0(x|X)[0-9a-fA-F]*)|(([0-9]+\.?[0-9]*)|(\.[0-9]+))((e|E)(\+|-)?[0-9]+)?)\b</string>
+			<key>name</key>
+			<string>constant.numeric.pl1</string>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>\/\*</string>
+			<key>contentName</key>
+			<string>comment.block.pl1</string>
+			<key>end</key>
+			<string>\*\/</string>
+			<key>name</key>
+			<string>comment.block.pl1</string>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>'</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.string.begin.pl1</string>
+				</dict>
+			</dict>
+			<key>contentName</key>
+			<string>string.quoted.single.pl1</string>
+			<key>end</key>
+			<string>'</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.string.end.pl1</string>
+				</dict>
+			</dict>
+			<key>name</key>
+			<string>string.quoted.single.pl1</string>
+		</dict>
+	</array>
+	<key>scopeName</key>
+	<string>source.pl1</string>
+	<key>uuid</key>
+	<string>FB91C301-3214-42B3-8B56-16288F1C1E17</string>
+</dict>
+</plist>
