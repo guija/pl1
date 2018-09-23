@@ -13,6 +13,11 @@ Features
 	- Comments
 	- Constants
 
+License
+---
+
+GNU General Public License v3.0
+
 Contributing
 ---
 
